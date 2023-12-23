@@ -11,7 +11,7 @@ client = modbus_client.ModbusTcpClient(plc_ip_address, plc_port)
 try:
     # Connect to the PLC
     client.connect()
-    print("Connected to PLC!")
+    if client.connected: print("Connected to PLC!!!")
 
     # Read a register value
     result = client.read_holding_registers(register_address, 1)
